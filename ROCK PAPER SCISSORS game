@@ -1,0 +1,90 @@
+import random
+
+print('''
+You will get 3 chances 
+
+1.Rock
+2.Paper 
+3.Scissors 
+''')
+
+def game():
+    cscore = 0
+    pscore = 0
+    for i in range(3):
+        print(f"TURN {i + 1} :")
+        ch = int(input("Your turn:"))
+        a = random.randint(1, 3)
+
+        match ch:
+            case 1:
+                print("You choose rock")
+            case 2:
+                print("You choose paper")
+            case 3:
+                print("You choose scissors")
+        print("\n")
+
+        print("Computer's turn!")
+        match a:
+            case 1:
+                print("Computer chooses Rock")
+            case 2:
+                print("Computer chooses Paper")
+            case 3:
+                print("Computer chooses Scissors")
+        print("\n")
+
+        if (ch == a):
+            print("Oops! It's a draw")
+        elif (ch == 1 and a == 2):
+            print("Computer wins")
+            cscore += 1
+        elif (ch == 1 and a == 3):
+            print("You win")
+            pscore += 1
+        elif (ch == 2 and a == 1):
+            print('You win')
+            pscore += 1
+        elif (ch == 2 and a == 3):
+            print("Computer wins")
+            cscore += 1
+
+        elif (ch == 3 and a == 1):
+            print("Computer wins")
+            cscore += 1
+        else:
+            print("You win")
+            pscore += 1
+
+        print("\nYour score is", pscore)
+        print("Computer's score is", cscore)
+        print("*********************************************\n")
+
+    print("**GAME OVER**\n")
+    print("Final Result")
+
+    if (pscore > cscore):
+        print("You win!")
+    elif (pscore == cscore):
+        print("DRAW")
+    else:
+        print("Computer wins!")
+
+    print("\n")
+
+    print("Want to play another round ?")
+    global C
+    C= input("Enter Y(yes) or N(no)")
+
+game()
+
+if C=="Y":
+    game()
+elif C=="N":
+    pass
+else:
+    print("INVALID CHOICE")
+
+
+

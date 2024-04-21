@@ -1,6 +1,6 @@
 # CODSOFT
 # simple calculator
-''' '''
+
 print('''
       1.ADDITION (+)
       2.SUBTRACTION (-)
@@ -26,13 +26,11 @@ match ch:
         print("Performing Multiplication")
         print(f"Result : {num1}*{num2} = ", num1 * num2)
     case 4:
-
         if num1 == num2 == 0:
             print("Can't divide by zero")
         else:
             print("Performing Division")
             print(f"Result : {num1}/{num2} = ", num1 / num2)
-
     case 5:
         print("Performing Modulus")
         print(f"Result : {num1}%{num2} is ", num1 % num2)
